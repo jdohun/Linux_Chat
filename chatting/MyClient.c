@@ -55,7 +55,7 @@ void console(int sockfd) {
 
 		if (strncmp(buffer, "exit", 4) == 0) {
 			/* tell server to clean up structures for the client */
-			write(sockfd, "exit", 6);
+			write(sockfd, "exit", 5);
 			/* clean up self and exit */
 			pthread_mutex_destroy(&console_cv_lock);
 			pthread_cond_destroy(&console_cv);
@@ -109,7 +109,7 @@ void console(int sockfd) {
 			continue;
 		}
 
-		// ��ü �޽���
+		// ÀüÃ¼ ¸Þ½ÃÁö
 		if (strncmp(buffer, "all ", 4) == 0) {
 			/* the following is to validate the syntax */
 			tmp = strchr(buffer, ' ');
